@@ -1,0 +1,18 @@
+# Installing Httpd  in appservers
+# start Httpd Service
+---
+- host: appservers
+  become: true
+  gather_facts: no
+  tasks:
+    - name: install Htpd
+      tags:
+        - install
+      yum:
+        name: httpd
+        state: presrnt
+      -name:
+        start: Start Httpd Service
+        service:
+          name: httpd
+          state: started
